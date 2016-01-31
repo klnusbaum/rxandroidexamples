@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RxAndroidExamples</string>
+    <string name="example_list_title">Example List</string>
+    <string name="error_message">Oops. An Error Occurred.</string>
+    <string name="increment">Increment</string>
+    <string name="no_results">No Results Found</string>
+    <string name="search_hint">Type City Name Here</string>
+</resources>
