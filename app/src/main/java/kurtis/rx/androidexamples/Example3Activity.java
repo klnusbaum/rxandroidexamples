@@ -17,13 +17,6 @@ import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
-/**
- * Example 3: Cleaning Things Up A Bit
- *
- * Our previous example was pretty good. We dove into a lot of details about how Observables work and learned
- * how to load data asynchronously. Let's take a brief look at how we could streamline the previous example a little
- * bit.
- */
 public class Example3Activity extends AppCompatActivity {
 
     private Subscription mTvShowSubscription;
@@ -42,17 +35,6 @@ public class Example3Activity extends AppCompatActivity {
     }
 
     private void createSingle() {
-        /**
-         * Observables are great, but in many cases they're kind of overkill. Many times when using an Observable,
-         * we're only going to have one result. So all of the semantics around onNext and onCompleted are
-         * a little much. As it turns out, there's a simpler version of an Observable called a Single.
-         *
-         * Singles work almost exactly the same as Observables. But instead of their Observers having three callbacks
-         * (onCompleted, onNext, and onError), they Observers of a Single only have two callbacks: onSuccess
-         * and onError. Cool. Less code for us to write.
-         *
-         * Just like Observable, we can create asynchronous loading Singles by using the fromCallable method.
-         */
         Single<List<String>> tvShowSingle = Single.fromCallable(new Callable<List<String>>() {
             @Override
             public List<String> call() throws Exception {
@@ -65,22 +47,6 @@ public class Example3Activity extends AppCompatActivity {
             }
         });
 
-        /**
-         * This should look pretty familiar. We're doing a lot of the same stuff we did in Example 2. We're calling
-         * subscribeOn to make sure that our call to the RestClient is run off of the UI thread and we're calling
-         * observeOn to make sure that the results of the Single are emitted on the UI thread.
-         *
-         * Instead of using an Observer, we're just using a class called SingleSubscriber. It's very similar to
-         * an Observer except that it just has the two methods we mentioned above: onSuccess and onError. A
-         * SingleSubscriber is to a Single what an Observer is to an Observable.
-         *
-         * Subscribing to a Single also results in the creation of a Subscription object. This Subscription behaves the
-         * same way as in Example 2 and we make sure to unsubscribe in our onDestroy method.
-         *
-         * That's all for Example 3. I added a bit of error handling logic in this Example just to give you a feel
-         * for what it looks like. You can uncomment the line up in our call method to see what happens when we
-         * make a REST call that generates an error.
-         */
         mTvShowSubscription = tvShowSingle
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
