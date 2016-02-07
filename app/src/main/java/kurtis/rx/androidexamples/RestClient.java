@@ -72,7 +72,7 @@ public class RestClient {
         String[] cities = mContext.getResources().getStringArray(R.array.city_list);
         List<String> toReturn = new ArrayList<>();
         for (String city : cities) {
-            if (city.startsWith(searchString)) {
+            if (city.toLowerCase().startsWith(searchString.toLowerCase())) {
                 toReturn.add(city);
             }
         }
