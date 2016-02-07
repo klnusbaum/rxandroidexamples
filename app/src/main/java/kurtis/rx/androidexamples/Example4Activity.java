@@ -20,13 +20,8 @@ import rx.subjects.PublishSubject;
  */
 public class Example4Activity extends AppCompatActivity {
 
-    @Nullable
     private TextView mCounterDisplay;
-
-    @Nullable
     private Button mIncrementButton;
-
-    @Nullable
     private PublishSubject<Integer> mCounterEmitter;
 
     private int mCounter = 0;
@@ -64,9 +59,7 @@ public class Example4Activity extends AppCompatActivity {
 
             @Override
             public void onNext(Integer integer) {
-                if (mCounterDisplay != null) {
-                    mCounterDisplay.setText(String.valueOf(integer));
-                }
+                  mCounterDisplay.setText(String.valueOf(integer));
             }
         });
     }
@@ -79,29 +72,20 @@ public class Example4Activity extends AppCompatActivity {
 
     private void configureCounterDisplay() {
         mCounterDisplay = (TextView) findViewById(R.id.counter_display);
-        if (mCounterDisplay != null) {
-            mCounterDisplay.setText(String.valueOf(mCounter));
-        }
+        mCounterDisplay.setText(String.valueOf(mCounter));
     }
 
     private void configureIncrementButton() {
         mIncrementButton = (Button) findViewById(R.id.increment_button);
-
-        if (mIncrementButton != null) {
-            mIncrementButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onIncrementButtonClick();
-                }
-            });
-        }
+        mIncrementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onIncrementButtonClick();
+            }
+        });
     }
 
     private void onIncrementButtonClick() {
-        if (mCounterEmitter == null) {
-            return;
-        }
-
         /**
          * Ah! Here we are. Since Subjects are also Observers that means they have an onNext method (and an onCompleted
          * and an onError). This means we can put stuff into the pipe by simply calling onNext. Using this we can

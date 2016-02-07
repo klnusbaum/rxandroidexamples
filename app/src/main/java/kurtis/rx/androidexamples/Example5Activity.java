@@ -44,9 +44,7 @@ public class Example5Activity extends AppCompatActivity {
         }).subscribe(new SingleSubscriber<String>() {
             @Override
             public void onSuccess(String value) {
-                if (mValueDisplay != null) {
-                    mValueDisplay.setText(value);
-                }
+                  mValueDisplay.setText(value);
             }
 
             @Override
