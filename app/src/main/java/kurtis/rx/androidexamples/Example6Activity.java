@@ -34,7 +34,7 @@ public class Example6Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mRestClient = new RestClient(this);
+        mRestClient = new RestClient(getApplicationContext());
         configureLayout();
         createObservables();
         listenToSearchInput();
@@ -114,7 +114,7 @@ public class Example6Activity extends AppCompatActivity {
         mNoResultsIndicator = (TextView) findViewById(R.id.no_results_indicator);
         mSearchResults = (RecyclerView) findViewById(R.id.search_results);
         mSearchResults.setLayoutManager(new LinearLayoutManager(this));
-        mSearchResultsAdapter = new SimpleStringAdapter(this);
+        mSearchResultsAdapter = new SimpleStringAdapter(getApplicationContext());
         mSearchResults.setAdapter(mSearchResultsAdapter);
     }
 

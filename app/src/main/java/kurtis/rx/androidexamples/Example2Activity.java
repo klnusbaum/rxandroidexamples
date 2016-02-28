@@ -27,7 +27,7 @@ public class Example2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mRestClient = new RestClient(this);
+        mRestClient = new RestClient(getApplicationContext());
         configureLayout();
         createObservable();
     }
