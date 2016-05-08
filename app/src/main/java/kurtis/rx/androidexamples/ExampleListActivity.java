@@ -30,7 +30,7 @@ public class ExampleListActivity extends AppCompatActivity {
         RecyclerView exampleList = (RecyclerView) findViewById(R.id.example_list);
         exampleList.setHasFixedSize(true);
         exampleList.setLayoutManager(new LinearLayoutManager(this));
-        exampleList.setAdapter(new ExampleAdapter(this, getExamples()));
+        exampleList.setAdapter(new ExampleAdapter(getApplicationContext(), getExamples()));
     }
 
     private static List<ExampleActivityAndName> getExamples() {
