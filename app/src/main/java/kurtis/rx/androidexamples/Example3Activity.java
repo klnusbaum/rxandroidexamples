@@ -41,7 +41,7 @@ public class Example3Activity extends AppCompatActivity {
                 /**
                  * Uncomment me (and comment out the line below) to see what happens when an error occurs.
                  *
-                 * return RestClient.getFavoriteTvShowsWithException();
+                 * return mRestClient.getFavoriteTvShowsWithException();
                  */
                 return mRestClient.getFavoriteTvShows();
             }
