@@ -67,8 +67,10 @@ public class Example3Activity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        if (mTvShowSubscription != null && !mTvShowSubscription.isUnsubscribed()) {
-            mTvShowSubscription.unsubscribe();
+        if (mTvShowSubscription != null)
+        {
+            if(!mTvShowSubscription.isUnsubscribed()) mTvShowSubscription.unsubscribe();
+            
         }
     }
 
