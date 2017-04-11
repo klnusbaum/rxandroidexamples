@@ -32,12 +32,13 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mNameDisplay.setText(mExamples.get(position).mExampleName);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent exampleIntent = new Intent(mContext, mExamples.get(position).mExampleActivityClass);
+                Intent exampleIntent = new Intent(mContext,
+                        mExamples.get(holder.getAdapterPosition()).mExampleActivityClass);
                 mContext.startActivity(exampleIntent);
             }
         });
