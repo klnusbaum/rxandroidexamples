@@ -1,9 +1,9 @@
 package kurtis.rx.androidexamples;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -43,7 +43,8 @@ public class Example3Activity extends AppCompatActivity {
                  *
                  * return RestClient.getFavoriteTvShowsWithException();
                  */
-                return mRestClient.getFavoriteTvShows();
+                //return mRestClient.getFavoriteTvShows();
+                return RestClient.getFavoriteTvShowsWithException();
             }
         });
 

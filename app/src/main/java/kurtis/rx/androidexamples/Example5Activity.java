@@ -1,7 +1,8 @@
 package kurtis.rx.androidexamples;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.TextView;
 
 import rx.Single;
@@ -25,7 +26,7 @@ public class Example5Activity extends AppCompatActivity {
         }).subscribe(new SingleSubscriber<String>() {
             @Override
             public void onSuccess(String value) {
-                  mValueDisplay.setText(value);
+                  mValueDisplay.setText(value+ "test");
             }
 
             @Override

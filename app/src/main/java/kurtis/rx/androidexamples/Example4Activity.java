@@ -1,8 +1,9 @@
 package kurtis.rx.androidexamples;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,11 +35,14 @@ public class Example4Activity extends AppCompatActivity {
 
             @Override
             public void onError(Throwable e) {
-
+                e.printStackTrace();
             }
 
             @Override
             public void onNext(Integer integer) {
+                if(integer == 3) { //error produce
+                    int t = 5 / 0;
+                }
                   mCounterDisplay.setText(String.valueOf(integer));
             }
         });

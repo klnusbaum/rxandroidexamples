@@ -10,12 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
+        <activity android:name=".MainActivity">
+        <intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
+        </activity>
         <activity android:name=".ExampleListActivity">
-            <intent-filter>
+           <!-- <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 
         <activity
@@ -26,27 +33,54 @@
          <activity
             android:name=".Example2Activity"
             android:parentActivityName=".ExampleListActivity"
-            />
+            >
+             <!--<intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>-->
+         </activity>
+
 
         <activity
             android:name=".Example3Activity"
-            android:parentActivityName=".ExampleListActivity"
-            />
+
+            >
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+        </activity>
 
         <activity
             android:name=".Example4Activity"
-            android:parentActivityName=".ExampleListActivity"
-            />
+
+            >
+           <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>-->
+        </activity>
 
         <activity
             android:name=".Example5Activity"
-            android:parentActivityName=".ExampleListActivity"
-            />
+
+            >
+        <!--<intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>-->
+        </activity>
 
         <activity
             android:name=".Example6Activity"
-            android:parentActivityName=".ExampleListActivity"
-            />
+
+            >
+
+        </activity>
     </application>
 
 </manifest>
