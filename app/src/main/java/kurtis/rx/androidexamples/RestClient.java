@@ -25,7 +25,7 @@ public class RestClient {
         return createTvShowList();
     }
 
-    public List<String> getFavoriteTvShowsWithException() {
+    public static List<String> getFavoriteTvShowsWithException() {
         try {
             // "Simulate" the delay of network.
             Thread.sleep(5000);

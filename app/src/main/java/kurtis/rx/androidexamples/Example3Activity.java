@@ -43,7 +43,8 @@ public class Example3Activity extends AppCompatActivity {
                  *
                  * return RestClient.getFavoriteTvShowsWithException();
                  */
-                return mRestClient.getFavoriteTvShows();
+                //return mRestClient.getFavoriteTvShows();
+                return RestClient.getFavoriteTvShowsWithException();
             }
         });
 

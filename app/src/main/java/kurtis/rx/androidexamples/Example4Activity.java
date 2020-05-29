@@ -35,11 +35,14 @@ public class Example4Activity extends AppCompatActivity {
 
             @Override
             public void onError(Throwable e) {
-
+                e.printStackTrace();
             }
 
             @Override
             public void onNext(Integer integer) {
+                if(integer == 3) { //error produce
+                    int t = 5 / 0;
+                }
                   mCounterDisplay.setText(String.valueOf(integer));
             }
         });
